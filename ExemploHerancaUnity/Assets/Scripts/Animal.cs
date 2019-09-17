@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    [SerializeField] string nome;
-    [SerializeField] float velocidadeVertical;
+    [SerializeField] protected float velocidadeVertical;
 
     Vector3 posicaoInicial;
     Vector3 posicao;
@@ -23,7 +22,8 @@ public class Animal : MonoBehaviour
     protected virtual void Move()
     {
         posicao = posicaoInicial + Vector3.right * Mathf.Sin(Time.time);
-        velocidadeVertical -= 14 * Time.deltaTime;
+        if (velocidadeVertical > 0)
+            velocidadeVertical -= 14 * Time.deltaTime;
         
         if (velocidadeVertical < 0)
             velocidadeVertical = 0;
