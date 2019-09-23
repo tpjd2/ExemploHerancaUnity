@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animal : MonoBehaviour
+public abstract class Animal : MonoBehaviour
 {
     [SerializeField] protected float velocidadeVertical;
 
@@ -33,10 +33,7 @@ public class Animal : MonoBehaviour
         transform.position = posicao;
     }
 
-    protected virtual void Fala()
-    {
-        Debug.Log("O animal diz: Bem-vindo");
-    }
+    protected abstract void Fala();
 
     protected virtual void Pula()
     {

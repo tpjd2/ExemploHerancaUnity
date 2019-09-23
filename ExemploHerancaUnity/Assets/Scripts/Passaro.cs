@@ -12,7 +12,6 @@ public class Passaro : Animal
 
     protected override void Fala()
     {
-        base.Fala();
         Debug.Log("Pássaro: piu-piu");
     }
 
